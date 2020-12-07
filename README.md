@@ -1,37 +1,18 @@
-﻿# Zoo Java Console Application
----
-## Git
+﻿## ING Zoo
 
-Voor het maken van deze opdracht wordt er gebruik gemaakt van het versiebeheersysteem Git.
+This Java application is an exercise requested by the **ING Tech Research & Development** department to verify 
+my competences for a potential graduation internship position. It's probably a bad idea to use this as a learning 
+reference.
 
-Gebruikte **IDE**: [IntelliJ IDEA](https://www.jetbrains.com/idea/). (**Niet verplicht**)
+This is an improved version. The original version can be found [here](https://bitbucket.org/corebankresearch/zoo/src/master/).
 
-Gebruikte **SDK**: [JDK 1.8](https://bitbucket.org/kychu/zoo/downloads/java-1.8.0-openjdk-1.8.0.212-3.b04.redhat.windows.x86_64.zip).
-
-Mocht er problemen zijn met het openen van dit project, creëer dan een nieuw project binnen jouw IDE en kopieer de Java bestanden uit `src/com/ing/zoo`
-
-Stappen:
-
-1. Clone deze repository.
-2. Maak een nieuwe repository aan, bijvoorbeeld op [Github](https://www.github.com).
-3. Push jouw veranderingen naar jouw repository.
-4. Maak jouw repository openbaar (public).
-4. Als de applicatie af is, push dan de laatste versie naar jouw `master` branch.
-
---- 
-## Opdracht
-- Maak de applicatie af.
-- Reorganiseer eventueel de folder structuur.
-- Refactor eventueel de code (denk goed na over de class structure).
-	- Probeer er voor de zorgen dat je bijvoorbeeld geen EatMeat methode kan aanroepen op een Zebra object.
-- Voeg 2 nieuwe dieren toe.
----
-## Eisen
-
-Bij elke command laat je het resultaat in de console  zien.
-
-- Als je de [hello] command uitvoert zonder dat er een naam is ingevuld zeggen alle dieren hallo.
-	- Als er wel een naam is ingevuld [hello henk] zegt alleen dat dier hallo 
-- Als je de [give leaves] command uitvoert krijgen alle herbivores leaves.
-- Als je de [give meat] command uitvoert krijgen alle carnivores meat.
-- Als je de [perform trick] command uitvoert doen alle dieren die dat kunnen hun trucje.
+The application is loosely based on the [Strategy design pattern](https://www.oodesign.com/strategy-pattern.html). 
+There are some caveats in the application because of this:
+- One of the strengths of the Strategy pattern is its ability to change an object's strategy at runtime, but no use 
+is made of this. While this change is certainly realistic for humans (Omnivore to Herbivore), in the animal kingdom 
+this may only occur due to evolution (I think). The pattern was mostly chosen to prevent code duplication in nearly identical
+arbitrary classes like Carnivore, Herbivore and Omnivore.
+- In the original application, Omnivorous creatures had differing responses for eating leaves and plants - this is 
+not reflected here. It may be possible to turn the IEatingStrategy into an abstract class though this requires some 
+work on the Animal class itself and defeats the purpose of the pattern. In other words, a design oversight. Whoops!
+    
